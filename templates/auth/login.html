@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %} connexion | {% endblock title %}
+
+{% block content %}
+
+ <div class="p-10 lg:p-20 text-center">
+
+    <h1 class="text-3xl lg:text-6xl text-white"> Connexion</h1>
+
+</div>
+
+<form method='post' action='.' class="lg:w-1/4 px-4 mx-auto">
+    {% csrf_token %}
+
+    <div class="mb-5">
+        <label class="text-white"  for="username"> Nom D'utilisateur</label>
+
+        <input type="text" id="username" name="username" class="w-full mt-2 px-4 py-2 rounded-xl">
+    </div>
+    
+    <div class="mb-5">
+        <label class="text-white"  for="password"> Mot de passe </label>
+
+        <input type="password" id="password" name="password" class="w-full mt-2 px-4 py-2 rounded-xl">
+    </div>
+
+    
+        
+        {% if form.errors %}
+            {% for field in form %}
+                {% for error in field.errors  %}
+                    <div class="mb-5 p-4 rounded-xl bg-red-300 text-white">
+                        <p>{{ error|escape}}</p>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        
+        {% endif %}
+
+        <button class="px-5 py-3 rounded-xl text-white bg-teal-800 hover:bg-teal-700"> Connexion </button>
+   
+</form>
+
+{% endblock content %}
