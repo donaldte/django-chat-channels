@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # application externes
     'channels',
+    'ckeditor',
     # applications internes
     'chat',
     'authapp',

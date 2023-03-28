@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% load static %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,10 +8,12 @@
     <title>{% block title %}{% endblock %} DjangoChat</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+    <script src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
 
     <style>
         .chat-messages{
-            height: 200px;
+            height: 400px;
             overflow-y: auto;
         }
     </style>
